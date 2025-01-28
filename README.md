@@ -2,36 +2,32 @@
 
 ## 1. Project overview
 ### CIFAR-100
- - **Model:**
-    - **LeNet-5**
+ - **Model:** LeNet-5
  - **Training Modes:**
-    - **Centralized Training**
-    - **Federated Learning**
+    - Centralized Training
+    - Federated Learning
 - **Learning Approaches:**
-    - **IID (Indipendent and Identically Distributed)**
-    - **Non-IID (Partitioned by class)**
+    - IID (Indipendent and Identically Distributed)
+    - Non-IID (Partitioned by class)
 - **Schedulers:**
-    - **Step LR**
-    - **Exponential LR**
-    - **CosineAnnealing LR**
-- **Optimizer:**
-    - **SGD (Stochastic Gradient Descent)**
+    - Step LR
+    - Exponential LR
+    - CosineAnnealing LR
+- **Optimizer:** SGD (Stochastic Gradient Descent)
 
 ### Shakespeare
- - **Model:**
-    - **Shakespeare LSTM**
+ - **Model:** Shakespeare LSTM
  - **Training Modes:**
-    - **Centralized Training**
-    - **Federated Learning**
+    - Centralized Training
+    - Federated Learning
 - **Learning Approaches:**
-    - **IID (Indipendent and Identically Distributed)**
-    - **Non-IID (Partitioned by class)**
+    - IID (Indipendent and Identically Distributed)
+    - Non-IID (Partitioned by class)
 - **Schedulers:**
-    - **Step LR**
-    - **Exponential LR**
-    - **CosineAnnealing LR**
-- **Optimizer:**
-    - **SGD (Stochastic Gradient Descent)**
+    - Step LR
+    - Exponential LR
+    - CosineAnnealing LR
+- **Optimizer:** SGD (Stochastic Gradient Descent)**
 
 ## 2. Installation & Dependencies
 Before running the experiments, ensure that all required libraries are installed and that your environment is correctly set up.
