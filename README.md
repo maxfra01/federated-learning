@@ -74,7 +74,23 @@ Running the next cell in the notebook, it initializes the deep learning models f
 
 ## 5. Centralized Training
  - ### 5.1 CIFAR-100
+     Run the fifth and sixth cells in the notebook `cifarFL.ipynb` to train the CIFAR-100 dataset using centralized training.
+     Hyperparameters such as the number of epochs, learning rate, and optimizer can be adjusted to reproduce experiments.
  - ### 5.2 Shakespeare 
+    Run the fifth and sixth and seventh cells in the notebook `shakesprFL.ipynb` to train the Shakespeare dataset using centralized training.
+    Hyperparameters such as the number of epochs, learning rate, and optimizer can be adjusted to reproduce experiments.
+
 ## 6. Federated Learning Implementation
  - ### 6.1 CIFAR-100
- - ### 6.2 Shakespeare 
+    Run the last three cells in the notebook `cifarFL.ipynb` to train the CIFAR-100 dataset using federated learning. In particular in the last cell, you can all hyperparameters such as the number of rounds, number of clients, learning rate. To run uniform selection experiments it is sufficient to run FedAVG on the `server_uniform` object.
+    For skewed participation, you can adjust the `SKEWNESS` parameter and run the FedAVG on the `server_skewed` object.
+
+    To reproduce non-IID experiments, set the `sharding='niid'` and `Nc=5,1,10...` arguments in the `CIFAR100Dataset` class constructor.
+ - ### 6.2 Shakespeare   
+    Run the last three cells in the `shakesprFL.ipynb` notebook to train the Shakespeare dataset using federated learning. In particular in the last cell, you can all hyperparameters such as the number of rounds, number of clients, learning rate. To run uniform selection experiments it is sufficient to run FedAVG on the `server_uniform` object.
+    To run non-IID experiments, modify in the 
+
+
+## Personal contribution
+
+The `contribution_cifarFL.ipynb` contains the code for the personal contribution to the project.  The structure is the same as the `cifarFL.ipynb` notebook, with the addition of the personal contribution at the end of the notebook. To run the experiments run all cells in the notebook. In the last cell of the notebook, you can adjust the hyperparameters such as the number of rounds, number of clients, learning rate, and the `ALPHA` parameter for the personal contribution. To run the experiments, run the last cell in the notebook.
