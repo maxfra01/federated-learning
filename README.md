@@ -64,3 +64,17 @@ Before running the experiments, ensure that all required libraries are installed
             - **Train/Test Split:** Each client's data is divided into training and testing sets.
             - **Sharding Options:**
             IID (randomly partitions data across clients) & Non-IID (partitions data such that each client only has access to a subject of unique text)
+
+## 4. Model Initialization & Training
+Running the next cell in the notebook, it initializes the deep learning models for CIFAR-100 and Shakespeare datasets.
+ - ### 4.1 CIFAR-100 - LeNet-5
+    The CIFAR-100 dataset is trained using the LeNet-5 architecture, a convolutional neural network (CNN) designed for image classification.
+- ### 4.2 Shakespeare - Shakespeare LSTM
+    The Shakespeare dataset is trained using an LSTM-based recurrent neural network (RNN), which processes sequences of characters for text generation tasks.
+
+## 5. Centralized Training
+ - ### 5.1 CIFAR-100
+ - ### 5.2 Shakespeare 
+## 6. Federated Learning Implementation
+ - ### 6.1 CIFAR-100
+ - ### 6.2 Shakespeare 
