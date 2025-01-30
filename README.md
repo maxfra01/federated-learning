@@ -100,7 +100,14 @@ Before running the experiments, ensure that all required libraries are installed
     To reproduce non-IID experiments, set the `sharding='niid'` and `Nc=5,1,10...` arguments in the `CIFAR100Dataset` class constructor.
  - ### 6.2 Shakespeare   
     Run the last three cells in the `shakesprFL.ipynb` notebook to train the Shakespeare dataset using federated learning. In particular in the last cell, you can all hyperparameters such as the number of rounds, number of clients, learning rate. To run uniform selection experiments it is sufficient to run FedAVG on the `server_uniform` object.
-    To run non-IID experiments, modify in the 
+    To run non-IID experiments, modify in the function _load data this 'client_id': str(user), because we have strings in this case. We also change this parameter for having 100 classes
+    preprocess_params = {
+        'sharding': 'iid',
+        'sf': 0.01,
+        'iu': 0.089,
+        't': 'sample',
+        'tf': 0.8,
+    }
 
 
 ## 7. Personal contribution
