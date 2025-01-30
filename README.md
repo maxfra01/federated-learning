@@ -27,12 +27,12 @@
     - Step LR
     - Exponential LR
     - CosineAnnealing LR
-- **Optimizer:** SGD (Stochastic Gradient Descent)**
+- **Optimizer:** SGD (Stochastic Gradient Descent)
 
 ## 2. Installation & Dependencies
 Before running the experiments, ensure that all required libraries are installed and that your environment is correctly set up.
 - ### 2.1 Install Required Libraries
-    Run the first cell in the notebook. It installs all required libraries in one step.
+    Run the first cell in the notebooks `cifarFL.ipynb` and `shakesprFL.ipynb`. It installs all required libraries in one step.
     The libraries are essential for: 
     - **Torch & Torchvision:** Core frameworks for building and training deep learning models.
     - **Numpy & Pandas:** Data manipulation and numerical operations.
@@ -40,7 +40,7 @@ Before running the experiments, ensure that all required libraries are installed
     - **Scikit-learn:** Data splitting and preprocessing utilities.
 
 ## 3. Dataset Preparation
- Run the third cell in the notebook to prepare the CIFAR-100 and/or Shakespeare dataset.
+ Run the third cell in the notebooks `cifarFL.ipynb` and `shakesprFL.ipynb` to prepare the CIFAR-100 and/or Shakespeare dataset.
 - ### 3.1 CIFAR-100
    
     This step will download the CIFAR-100 dataset (if not already present) directly from the official repository and apply data augmentations and normalizations for the training and testing datasets
@@ -65,12 +65,24 @@ Before running the experiments, ensure that all required libraries are installed
             - **Sharding Options:**
             IID (randomly partitions data across clients) & Non-IID (partitions data such that each client only has access to a subject of unique text)
 
-## 4. Model Initialization & Training
-Running the next cell in the notebook, it initializes the deep learning models for CIFAR-100 and Shakespeare datasets.
+## 4. Model Initialization 
  - ### 4.1 CIFAR-100 - LeNet-5
-    The CIFAR-100 dataset is trained using the LeNet-5 architecture, a convolutional neural network (CNN) designed for image classification.
+    Running the next cell in the notebook, it initializes the deep learning models for CIFAR-100 `cifarFL.ipynb`. The CIFAR-100 dataset is trained using the LeNet-5 architecture, a convolutional neural network (CNN) designed for image classification.
+    Model Architecture:
+    - **Convolutional Layer 1:** 64 filters, kernel size 5x5, ReLU activation.
+    - **Max Pooling Layer 1:** Reduces dimensionality.
+    - **Convolutional Layer 2:** 64 filters, kernel size 5x5, ReLU activation.
+    - **Max Pooling Layer 2:** Further reduces dimensionality
+    - **Fully Connected Layer 1:** 384 neurons, ReLU activation.
+    - **Fully Connected Layer 2:** 192 neurons, ReLU activation.
+    - **Output Layer:** 100 neurons (corresponding to the 100 classes in CIFAR-100), Softmax activation.
 - ### 4.2 Shakespeare - Shakespeare LSTM
-    The Shakespeare dataset is trained using an LSTM-based recurrent neural network (RNN), which processes sequences of characters for text generation tasks.
+    Running the next cell in the notebook, it initializes the deep learning models for Shakespeare datasets `shakesprFL.ipynb`.The Shakespeare dataset is trained using an LSTM-based recurrent neural network (RNN), which processes sequences of characters for text generation tasks.
+    Model Architecture:
+    - **Embedding Layer:** Convert character indices into dense vectors of size 8.
+    - **LSTM Layer 1:** 256 hidden units.
+    - **LSTM Layer 2:** 256 hidden units.
+    - **Fully Connected Layer:** Outputs a probability distribution over the vocabulary size.
 
 ## 5. Centralized Training
  - ### 5.1 CIFAR-100
@@ -91,6 +103,6 @@ Running the next cell in the notebook, it initializes the deep learning models f
     To run non-IID experiments, modify in the 
 
 
-## Personal contribution
+## 7. Personal contribution
 
 The `contribution_cifarFL.ipynb` contains the code for the personal contribution to the project.  The structure is the same as the `cifarFL.ipynb` notebook, with the addition of the personal contribution at the end of the notebook. To run the experiments run all cells in the notebook. In the last cell of the notebook, you can adjust the hyperparameters such as the number of rounds, number of clients, learning rate, and the `ALPHA` parameter for the personal contribution. To run the experiments, run the last cell in the notebook.
